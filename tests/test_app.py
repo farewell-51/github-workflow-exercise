@@ -12,3 +12,9 @@ def test_deduplicate_empty():
 
 def test_deduplicate_no_duplicates():
     assert deduplicate_list([1, 2, 3]) == [1, 2, 3]
+
+def test_addition():
+    from app.app import add_numbers
+    assert add_numbers(2, 3) == 5
+    assert add_numbers(-1, 1) == 0
+    assert add_numbers(0, 0) == 0

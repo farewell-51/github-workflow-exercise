@@ -8,8 +8,15 @@ def deduplicate_list(input_list):
             result.append(item)
     return result
 
+def add_numbers(a, b):
+    """新增的加法功能"""
+    return a + b
+
 if __name__ == "__main__":
     # 示例用法
     sample_list = [1, 2, 2, 3, 4, 4, 5]
     print(f"Original: {sample_list}")
     print(f"Deduplicated: {deduplicate_list(sample_list)}")
+    
+    # 新功能演示
+    print(f"Addition: 5 + 3 = {add_numbers(5, 3)}")
