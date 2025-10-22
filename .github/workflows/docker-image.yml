@@ -1,0 +1,22 @@
+name: Docker Build
+
+on:
+  push:
+    branches: [ main, dev, staging, feature/* ]
+  pull_request:
+    branches: [ main, dev, staging ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build Docker image
+      run: |
+        docker build -t my-app:latest .
+        
+    - name: Test Docker image
+      run: |
+        docker run --rm my-app:latest python -c "from app.app import deduplicate_list; print('Docker test passed')"
